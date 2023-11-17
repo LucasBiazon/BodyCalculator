@@ -185,3 +185,7 @@ main{
 .disabled{
     display: none;
 }
+
+.ativado{
+    background-color: var(--blue-dark);
+}
