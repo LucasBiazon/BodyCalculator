@@ -6,8 +6,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800&display=swap" rel="stylesheet">    
     <link rel="stylesheet" href="style.css">
-    <script src="./scripts/calculator.js"></script>
-    <script src="./scripts/theme.js"></script>
+    <script src="/scripts/calculator.js" defer></script>
+    <script src="/scripts/theme.js" defer></script>
     <title>Body Calculator</title>
 </head>
 <body>
@@ -21,21 +21,21 @@
                         <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
                 </svg>
             </div>
-            <ul id="optionsCalculator">
+            <ul id="optionsCalculator" class="disabled">
                 <li>
-                    <button>IMC</button>
+                    <button id="opIMC">IMC</button>
                 </li>
                 <li>
-                    <button>Corporal Density</button>
+                    <button id="opDensity">Corporal Density</button>
                 </li>
                 <li>
-                    <button>Daily Energy Expenditure</button>
+                    <button id="opEnergy">Daily Energy Expenditure</button>
                 </li>
                 <li>
-                    <button>Basal Metabolic Rate</button>
+                    <button id="opMetabolic ">Basal Metabolic Rate</button>
                 </li>
                 <li>
-                    <button>Nutritional needs</button>
+                    <button id="opNutritional">Nutritional needs</button>
                 </li>
             </ul>
         </nav>
@@ -54,20 +54,20 @@
                 </button>
             </div>
 
-            <div id="Lang">
+            <div id="Lang" >
                 <button id="btLang">
                     Lang 
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
                         <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
                     </svg>
                 </button>
-                <div >
-                    <ul id="optionsLang">
+                <div id="DivOptionsLang" class="disabled">
+                    <ul id="optionsLang" >
                         <li>
-                            <button>Pt-br</button>
+                            <button id="optionPt_Br">Pt-br</button>
                         </li>
                         <li>
-                            <button>English</button>
+                            <button id="optionEn">English</button>
                         </li>
                     </ul>
                 </div>
