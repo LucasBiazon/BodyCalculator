@@ -86,14 +86,15 @@
                 <div class="inputsCalculator">
                     <div class="inputCalculator">
                         <label for="height" class="inputTitleCalculator">Height (m):</label>
-                        <input type="number" name="height" id="height">
+                        <input type="number" name="height" id="height" step="0.01">
+                        <p id="erroInputCalculator" class="disabled">Inválido</p>
                     </div>
 
                     <div class="inputCalculator">
                         <label for="weight" class="inputTitleCalculator">Weight (kg):</label>
-                        <input type="number" name="weight" id="weight">
+                        <input type="number" name="weight" id="weight" step="0.01">
                     </div>
-                    <button type="submit" id="btCalculator">Calculate</button>
+                    <button type="submit" id="btCalculator" onclick="CalculateImc()">Calculate</button>
                 </div>
             </div>
 
@@ -133,7 +134,7 @@
                             <label for="bend">7 bends</label>
                         </div>
                     </div>
-                    <button type="submit" id="btCalculator">Calculate</button>
+                    <button type="submit" id="btCalculator" onclick="CalculateDensity()">Calculate</button>
                 </div>
             </div>
 
@@ -285,11 +286,10 @@
                     <button type="submit" id="btCalculator">Calculate</button>
                 </div>
             </div>
-
             
         </form>
         <div id="results">
-            results
+           <p id="loadingResults">Results</p>
         </div>
     </main>
 </body>
