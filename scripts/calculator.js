@@ -1,3 +1,34 @@
+// Lang
+const btLang = document.querySelector("#btLang")
+const DivOptionsLang = document.querySelector("#DivOptionsLang")
+const optionPt_Br = document.querySelector("#optionPt_Br")
+const optionEn = document.querySelector("#optionEn")
+
+// Types Calculator
+const btOptionsCalculator = document.querySelector("#btOptionsCalculator")
+const optionsCalculator = document.querySelector("#optionsCalculator")
+
+const opIMC = document.querySelector("#opIMC")
+const opDensity = document.querySelector("#opDensity")
+const opEnergy = document.querySelector("#opEnergy")
+const opMetabolic = document.querySelector("#opMetabolic")
+const opNutritional= document.querySelector("#opNutritional")
+
+// Calculator
+const calculator = document.querySelector("#Calculator")
+const loading = document.querySelector("#LoadingCalculator")
+const calculatorImc = document.querySelector("#CalculatorIMC")
+const calculatorDensity = document.querySelector("#CalculatorDensity")
+const calculatorEnergy = document.querySelector("#CalculatorEnergy")
+const calculatorMetabolic = document.querySelector("#CalculatorMetabolic")
+const calculatorNutritional = document.querySelector("#CalculatorNutritional")
+
+
+// Results
+const results = document.querySelector("#results")
+const loadingResults = document.querySelector("#loadingResults")
+
+
 const translate = {
     en: {
         typeCalculator: "Type Calculator",
@@ -6,6 +37,7 @@ const translate = {
             title: "IMC",
             height: "Height (m):",
             weight: "Weight (kg):",
+            invalid: "Invalid"
         },
         corporalDensity: "Corporal Density",
         dailyEnergyExpenditure: "Daily Energy Expenditure",
@@ -20,18 +52,12 @@ const translate = {
             title: "IMC",
             height: "Altura (m):",
             weight: "Peso (kg):",
+            invalid: "Inválido"
         },
     }
 }
 
-// Lang
-const btLang = document.querySelector("#btLang")
-const DivOptionsLang = document.querySelector("#DivOptionsLang")
-
-const optionPt_Br = document.querySelector("#optionPt_Br")
-const optionEn = document.querySelector("#optionEn")
-
-
+// lang events and functions
 btLang.addEventListener("click", () => { 
     DivOptionsLang.classList.toggle("disabled")
     document.querySelector("#btLang svg").classList.toggle("rotate")
@@ -41,42 +67,20 @@ optionPt_Br.addEventListener("click", TranslatePt_Br)
 optionEn.addEventListener("click", TranslateEn)
 
 function TranslatePt_Br(){
-    
+    invalid = translate.pt_br.imc.invalid
 }
 
 function TranslateEn(){
 }
 
-// Types Calculator
-const btOptionsCalculator = document.querySelector("#btOptionsCalculator")
-const optionsCalculator = document.querySelector("#optionsCalculator")
 
-const opIMC = document.querySelector("#opIMC")
-const opDensity = document.querySelector("#opDensity")
-const opEnergy = document.querySelector("#opEnergy")
-const opMetabolic = document.querySelector("#opMetabolic")
-const opNutritional= document.querySelector("#opNutritional")
-
+// Type Calculator events and funcitons
 btOptionsCalculator.addEventListener("click", () => { 
     optionsCalculator.classList.toggle("disabled")
     document.querySelector("#btOptionsCalculator svg").classList.toggle("rotate")
 })
 
-// Calculator
-const calculator = document.querySelector("#Calculator")
-const loading = document.querySelector("#LoadingCalculator")
-
-const calculatorImc = document.querySelector("#CalculatorIMC")
-const calculatorDensity = document.querySelector("#CalculatorDensity")
-const calculatorEnergy = document.querySelector("#CalculatorEnergy")
-const calculatorMetabolic = document.querySelector("#CalculatorMetabolic")
-const calculatorNutritional = document.querySelector("#CalculatorNutritional")
-
-const results = document.querySelector("#results")
-const loadingResults = document.querySelector("#loadingResults")
-
 let calculatorAtual = loading
-
 opIMC.addEventListener("click", () => {
     calculatorAtual.classList.add("disabled")
     calculatorImc.classList.remove("disabled")
@@ -114,26 +118,71 @@ opNutritional.addEventListener("click", () => {
 
 // Calculator operation
 calculator.addEventListener("submit", (event) => event.preventDefault())
+let invalid = translate.en.imc.invalid
 
 function CalculateImc() {
-   const height = document.querySelector("#height").value 
-   const weight = document.querySelector("#weight").value
-   const result = parseInt(weight / (height * height))
-   console.log(result)
+   const height = parseFloat(document.querySelector(" #CalculatorIMC #height").value) 
+   const weight = parseFloat(document.querySelector("#CalculatorIMC #weight").value)
+   let result
+
+   if(isNaN(height))
+    {
+        result = invalid
+    }else if(isNaN(weight))
+    {
+        result = invalid
+    }else
+
+     {  let resultImc = parseInt(weight / (height * height)) 
+        let imcGrau 
+
+        if(resultImc < 18.5){
+            imcGrau = "Magreza"
+        }else if( resultImc <= 24.9) {
+            imcGrau = "Normal"
+        }else if(resultImc <= 29.9){
+            imcGrau = "Sobrepeso"
+        }else if( resultImc <= 39.9){
+            imcGrau = "Obsidade"
+        }else{
+            imcGrau = "Obesidade grave"
+        }
+        
+        result = `Seu IMC é ${resultImc} - ${imcGrau}`
+    }
+    console.log(result)
 }
 
 function CalculateDensity(){
-    const age = document.querySelector("#age").value 
+    const age = parseInt(document.querySelector(" #age").value) 
     const weight = document.querySelector("#weight").value
     const gender = document.getElementsByName("gender")
-    const method = document.getElementsByName("bend")
-    let genderSelecionado
-    for(const op of gender){
+    const bend = document.getElementsByName("bend")
+
+
+ 
+}
+
+function CalculateEnergy(){
+    const height = parseFloat(document.querySelector(" #CalculatorEnergy #height").value) 
+    const weight = parseFloat(document.querySelector(" #CalculatorEnergy #weight").value)
+    const age = parseInt(document.querySelector("#CalculatorEnergy #age").value)
+    const optionGender = document.getElementsByName('gender')
+    const optionActivity = document.getElementsByName('activity')
+    let valorGender
+    let valorActvity
+
+    for(const op of optionGender){
         if(op.checked){
-            genderSelecionado = op.value
-            break
+            valorSexo = op.value
         }
     }
-    console.log(method, gender)
+
+    for(const op of optionActivity){
+        if(op.checked){
+            valorActvity = op.value
+        }
+    }
+    console.log(height, weight, age, valorSexo, valorActvity)
 }
 
