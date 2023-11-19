@@ -2,76 +2,136 @@ const translate = {
     en: {
         typeCalculator: "Type Calculator",
         setCalculator: "Set a calculator type...",
+        submit: "Calculate",
         results: "Results",
         invalid: "Invalid",
-        imc: "IMC",
 
-        imcThinness: "Thinness",
-        imcNormal: "Normal",
-        imcOverweight: "Overweight",
-        imcObesity: "Obesity",
-        imcObesityS:"Severe obesity",
-        imcSlogan: "Your IMC are ",
+        imc: {
+            title: "IMC",
+            thinness: "Thinness",
+            normal: "Normal",
+            overweight: "Overweight",
+            obesity: "Obesity",
+            obesityS:"Severe obesity",
+            slogan: "Your IMC are:",
+        },
+       
+        corporalDensity: {
+           title: "Corporal Density (3 bends)",
+           sloganD: "Your corporal density are:",
+           sloganF: "Fat percentage:"
+        }, 
 
-        corporalDensity: "Corporal Density (3 bends)",
-        dailyEnergyExpenditure: "Daily Energy Expenditure",
-        basalMetabolicRate: "Basal Metabolic Rate",
-        nutritionalNeeds: "Nutritional needs",
-        submit: "Calculate",
-        height: "Height (m):",
-        weight: "Weight (kg):",
-        age: "Age (y):",
-        gender: "Gender",
-        masculine: "Masculine",
-        feminine: "Feminine",
-        activity: "Physical Activity",
-        sedentary: "Sedentary",
-        mildly: "Mildly active",
-        moderately: "Moderately active",
-        very: "Very active",
-        extremely: "Extremely active",
-        calories: "Calories Total:",
-        carbohydrates: "Carbohydrates Percentage:",
-        protein:"Protein Percentage:",
-        fat: "Fat percentage:"
+        dailyEnergyExpenditure:{ 
+            title:"Daily Energy Expenditure",
+            slogan: "Your daily energy expenditure are:"
+        },
+
+        basalMetabolicRate: {
+            title: "Basal Metabolic Rate",
+            slogan: "Your basal metabolic rate are:"
+        },
+
+        nutritionalNeeds: {
+             title: "Nutritional needs",
+             calories: "Calories Total:",
+             carbohydrates: "Carbohydrates Percentage:",
+             protein:"Protein Percentage:",
+             fat: "Fat percentage:",
+             sloganCarb: "Carbohydrates:",
+             sloganProtein: "Proteins:",
+             sloganFat: "Fat:"
+        },
+        
+        inputs: {
+            height: "Height (m):",
+            weight: "Weight (kg):",
+            age: "Age (y):",
+        },
+        
+        gender: {
+            title: "Gender:",
+            masculine: "Masculine",
+            feminine: "Feminine"
+        },
+
+        activity: {
+            title: "Physical Activity:",
+            sedentary: "Sedentary",
+            mildly: "Mildly active",
+            moderately: "Moderately active",
+            very: "Very active",
+            extremely: "Extremely active",
+        }
+        
     }, 
     pt_br: {
         typeCalculator: "Tipo de Calculadora",
-        setCalculator: "Defina o tipo de calculadora...",
+        setCalculator: "Defina o tipo da calculadora...",
+        submit: "Calcular",
         results: "Resultados",
         invalid: "Inválido",
 
-        imc: "IMC",
-        imcThinness: "Magreza",
-        imcNormal: "Normal",
-        imcOverweight: "Sobrepeso",
-        imcObesity: "Obesidade",
-        imcObesityS:"Obesidade severa",
-        imcSlogan: "Seu IMC é de ",
+        imc: {
+            title: "IMC",
+            thinness: "Magreza",
+            normal: "Normal",
+            overweight: "Sobrepeso",
+            obesity: "Obesidade",
+            obesityS:"Obesidade severa",
+            slogan: "Seu IMC é de:",
+        },
+       
+        corporalDensity: {
+           title: "Densidade Corporal (3 dobras)",
+           sloganD: "Sua densidade corporal é de:",
+           sloganF: "Percentual de gordura:"
+        }, 
 
-        corporalDensity: "Densidade corporal (3 dobras)",
-        dailyEnergyExpenditure: "Gasto energético diário",
-        basalMetabolicRate: "Taxa de metabolismo Basal ",
-        nutritionalNeeds: "Macronutrientes",
-        submit: "Calcular",
-        height: "Altura (m):",
-        weight: "Peso (kg):",
-        age: "Idade (anos):",
-        gender: "Gênero",
-        masculine: "Masculino",
-        feminine: "Feminino",
-        activity: "Ativida física", 
-        sedentary: "Sedentário",
-        mildly: "Levemente ativo",
-        moderately: "Moderadamente ativo",
-        very: "Muito ativo",
-        extremely: "Extremamente ativo",
-        calories: "Total de calorias:",
-        carbohydrates: "Porcentagem de carboidrato:",
-        protein:"Porcentagem de proteína: ",
-        fat: "Porcentagem de gordura:"
+        dailyEnergyExpenditure:{ 
+            title:"Gasto energético diário",
+            slogan: "Seu gasto energético diário é:"
+        },
+
+        basalMetabolicRate: {
+            title: "Taxa metabólica basal",
+            slogan: "Sua taxa metabólica basal é de:"
+        },
+
+        nutritionalNeeds: {
+             title: "Macronutrientes",
+             calories: "Total de calorias:",
+             carbohydrates: "Percentual de carboidratos:",
+             protein:"Percentual de proteínas:",
+             fat: "Percentual de gordura:",
+             sloganCarb: "Carboidratros:",
+             sloganProtein: "Proteinas:",
+             sloganFat: "Gorduras:"
+        },
+        
+        inputs: {
+            height: "Altura (m):",
+            weight: "Peso (kg):",
+            age: "Idade (y):",
+        },
+        
+        gender: {
+            title: "Gênero:",
+            masculine: "Masculino",
+            feminine: "Feminino"
+        },
+
+        activity: {
+            title: "Atividade física:",
+            sedentary: "Sedentário",
+            mildly: "Levemente ativo",
+            moderately: "Moderadamente ativo",
+            very: "Muito",
+            extremely: "Extremamente ativo",
+        }
     }
 }
+
 // Lang
 const btLang = document.querySelector("#btLang")
 const DivOptionsLang = document.querySelector("#DivOptionsLang")
@@ -128,18 +188,6 @@ const StringCarbohydrates = document.querySelector(".carbohydrates")
 const StringProtein = document.querySelector(".protein")
 const StringFat = document.querySelector(".fat")
 
-//IMC 
-let  StringimcSlogan = translate.en.imcSlogan
-let StringimcThinness = translate.en.imcThinness
-let  StringimcNormal = translate.en.imcNormal
-let  StringimcOverweight = translate.en.imcOverweight
-let StringimcObesity = translate.en.imcObesity
-let StringimcObesityS = translate.en.imcObesityS
-
-let  Stringinvalid = translate.en.invalid
-
-
-
 
 // lang events and functions
 btLang.addEventListener("click", () => { 
@@ -150,142 +198,136 @@ btLang.addEventListener("click", () => {
 optionPt_Br.addEventListener("click", TranslatePt_Br)
 optionEn.addEventListener("click", TranslateEn)
 
+let lang = 2
+let pt_br = translate.pt_br
 function TranslatePt_Br(){
-    
-    titleOptionsCalculator.innerHTML = translate.pt_br.typeCalculator
-    loading.innerHTML = translate.pt_br.setCalculator
-    loadingResults.innerHTML = translate.pt_br.results
+    lang = 1
+    titleOptionsCalculator.innerHTML = pt_br.typeCalculator
+    loading.innerHTML = pt_br.setCalculator
+    loadingResults.innerHTML =pt_br.results
 
-    titleCalculatorImc.innerHTML = translate.pt_br.imc
-    titleCalculatorDensity.innerHTML = translate.pt_br.corporalDensity
-    titleCalculatorEnergy.innerHTML = translate.pt_br.dailyEnergyExpenditure
-    titleCalculatorMetabolic.innerHTML = translate.pt_br.basalMetabolicRate
-    titleCalculatorNutritional.innerHTML = translate.pt_br.nutritionalNeeds
+    titleCalculatorImc.innerHTML = pt_br.imc.title
+    titleCalculatorDensity.innerHTML = pt_br.corporalDensity.title
+    titleCalculatorEnergy.innerHTML = pt_br.dailyEnergyExpenditure.title
+    titleCalculatorMetabolic.innerHTML = pt_br.basalMetabolicRate.title
+    titleCalculatorNutritional.innerHTML = pt_br.nutritionalNeeds.title
 
-    opIMC.innerHTML = translate.pt_br.imc
-    opDensity.innerHTML = translate.pt_br.corporalDensity
-    opEnergy.innerHTML = translate.pt_br.dailyEnergyExpenditure
-    opMetabolic.innerHTML = translate.pt_br.basalMetabolicRate
-    opNutritional.innerHTML = translate.pt_br.nutritionalNeeds
+    opIMC.innerHTML = pt_br.imc.title
+    opDensity.innerHTML = pt_br.corporalDensity.title
+    opEnergy.innerHTML = pt_br.dailyEnergyExpenditure.title
+    opMetabolic.innerHTML = pt_br.basalMetabolicRate.title
+    opNutritional.innerHTML = pt_br.nutritionalNeeds.title
 
-    StringCalories.innerHTML  = translate.pt_br.calories
-    StringCarbohydrates.innerHTML = translate.pt_br.carbohydrates
-    StringProtein.innerHTML  = translate.pt_br.protein
-    StringFat.innerHTML  = translate.pt_br.fat
+    StringCalories.innerHTML  = pt_br.nutritionalNeeds.calories
+    StringCarbohydrates.innerHTML = pt_br.nutritionalNeeds.carbohydrates
+    StringProtein.innerHTML  = pt_br.nutritionalNeeds.protein
+    StringFat.innerHTML  = pt_br.nutritionalNeeds.fat
 
-    StringimcSlogan.innerHTML  = translate.pt_br.imcSlogan
-    StringimcThinness.innerHTML = "vai tomar no cu"
-    StringimcNormal.innerHTML  = translate.pt_br.imcNormal
-    StringimcOverweight.innerHTML   = translate.pt_br.imcOverweight
-    StringimcObesity.innerHTML  = translate.pt_br.imcObesity
-    StringimcObesityS.innerHTML  = translate.pt_br.imcObesityS
-    Stringinvalid.innerHTML = translate.pt_br.invalid
+ 
     
 
     for(const i of StringBtCalculate){
-        i.innerHTML= translate.pt_br.submit
+        i.innerHTML= pt_br.submit
     }
     for(const s of StringHeight){
-        s.innerHTML= translate.pt_br.height
+        s.innerHTML= pt_br.inputs.height
     }
     for(const s of StringWeight){
-        s.innerHTML= translate.pt_br.weight
+        s.innerHTML= pt_br.inputs.weight
     }
     for(const s of StringAge){
-        s.innerHTML= translate.pt_br.age
+        s.innerHTML= pt_br.inputs.age
     }
     for(const s of StringGender){
-        s.innerHTML= translate.pt_br.gender
+        s.innerHTML = pt_br.gender.title
     }
     for(const s of StringMasculine){
-        s.innerHTML= translate.pt_br.masculine
+        s.innerHTML= pt_br.gender.masculine
     }
     for(const s of StringFeminine){
-        s.innerHTML= translate.pt_br.feminine
+        s.innerHTML= pt_br.gender.feminine
     }
     for(const s of StringPhysicalActivity){
-        s.innerHTML= translate.pt_br.activity
+        s.innerHTML= pt_br.activity.title
     }
     for(const s of StringSedentary){
-        s.innerHTML= translate.pt_br.sedentary
+        s.innerHTML= pt_br.activity.sedentary
     }
     for(const s of StringMildly){
-        s.innerHTML= translate.pt_br.mildly
+        s.innerHTML= pt_br.activity.mildly
     }
     for(const s of StringVery){
-        s.innerHTML= translate.pt_br.very
+        s.innerHTML= pt_br.activity.very
     }
     for(const s of StringExtremely){
-        s.innerHTML= translate.pt_br.extremely
+        s.innerHTML= pt_br.activity.extremely
     }
     
 }
 
+let en = translate.en
 function TranslateEn(){
-    titleOptionsCalculator.innerHTML = translate.en.typeCalculator
-    loading.innerHTML = translate.en.setCalculator
-    loadingResults.innerHTML = translate.en.results
+    lang = 2
+    
+    titleOptionsCalculator.innerHTML = en.typeCalculator
+    loading.innerHTML = en.setCalculator
+    loadingResults.innerHTML =en.results
 
-    titleCalculatorImc.innerHTML = translate.en.imc
-    titleCalculatorDensity.innerHTML = translate.en.corporalDensity
-    titleCalculatorEnergy.innerHTML = translate.en.dailyEnergyExpenditure
-    titleCalculatorMetabolic.innerHTML = translate.en.basalMetabolicRate
-    titleCalculatorNutritional.innerHTML = translate.en.nutritionalNeeds
+    titleCalculatorImc.innerHTML = en.imc.title
+    titleCalculatorDensity.innerHTML = en.corporalDensity.title
+    titleCalculatorEnergy.innerHTML = en.dailyEnergyExpenditure.title
+    titleCalculatorMetabolic.innerHTML = en.basalMetabolicRate.title
+    titleCalculatorNutritional.innerHTML = en.nutritionalNeeds.title
 
-    opIMC.innerHTML = translate.en.imc
-    opDensity.innerHTML = translate.en.corporalDensity
-    opEnergy.innerHTML = translate.en.dailyEnergyExpenditure
-    opMetabolic.innerHTML = translate.en.basalMetabolicRate
-    opNutritional.innerHTML = translate.en.nutritionalNeeds
+    opIMC.innerHTML = en.imc.title
+    opDensity.innerHTML = en.corporalDensity.title
+    opEnergy.innerHTML = en.dailyEnergyExpenditure.title
+    opMetabolic.innerHTML = en.basalMetabolicRate.title
+    opNutritional.innerHTML = en.nutritionalNeeds.title
 
-    StringCalories.innerHTML  = translate.en.calories
-    StringCarbohydrates.innerHTML = translate.en.carbohydrates
-    StringProtein.innerHTML  = translate.en.protein
-    StringFat.innerHTML  = translate.en.fat
+    StringCalories.innerHTML  = en.nutritionalNeeds.calories
+    StringCarbohydrates.innerHTML = en.nutritionalNeeds.carbohydrates
+    StringProtein.innerHTML  = en.nutritionalNeeds.protein
+    StringFat.innerHTML  = en.nutritionalNeeds.fat
 
-    StringimcSlogan.innerHTML  = translate.en.imcSlogan
-    StringimcThinness.innerHTML = translate.en.imcThinness
-    StringimcNormal.innerHTML  = translate.en.imcNormal
-    StringimcOverweight.innerHTML = translate.en.imcOverweight
-    StringimcObesity.innerHTML = translate.en.imcObesity
-    StringimcObesityS.innerHTML = translate.en.imcObesityS
-    Stringinvalid.innerHTML = translate.en.invalid
+ 
+    
 
     for(const i of StringBtCalculate){
-        i.innerHTML= translate.en.submit
+        i.innerHTML= en.submit
     }
     for(const s of StringHeight){
-        s.innerHTML= translate.en.height
+        s.innerHTML= en.inputs.height
     }
     for(const s of StringWeight){
-        s.innerHTML= translate.en.weight
+        s.innerHTML= en.inputs.weight
     }
     for(const s of StringAge){
-        s.innerHTML= translate.en.age
+        s.innerHTML= en.inputs.age
     }
     for(const s of StringGender){
-        s.innerHTML= translate.en.gender
+        s.innerHTML = en.gender.title
     }
     for(const s of StringMasculine){
-        s.innerHTML= translate.en.masculine
+        s.innerHTML= en.gender.masculine
     }
     for(const s of StringFeminine){
-        s.innerHTML= translate.en.feminine
+        s.innerHTML= en.gender.feminine
     }
     for(const s of StringPhysicalActivity){
-        s.innerHTML= translate.en.activity
+        s.innerHTML= en.activity.title
     }
     for(const s of StringSedentary){
-        s.innerHTML= translate.en.sedentary
+        s.innerHTML= en.activity.sedentary
     }
     for(const s of StringMildly){
-        s.innerHTML= translate.en.mildly
+        s.innerHTML= en.activity.mildly
     }
     for(const s of StringVery){
-        s.innerHTML= translate.en.very
+        s.innerHTML= en.activity.very
     }
     for(const s of StringExtremely){
-        s.innerHTML= translate.en.extremely
+        s.innerHTML= en.activity.extremely
     }
 }
 
@@ -333,6 +375,7 @@ opNutritional.addEventListener("click", () => {
 })
 
 // Calculator operation
+let stringInvalid
 
 
 
@@ -341,35 +384,53 @@ calculatorImc.addEventListener("submit", (event) => {
    const height = parseFloat(document.querySelector(" #CalculatorIMC #height").value) 
    const weight = parseFloat(document.querySelector("#CalculatorIMC #weight").value)
    let result
-
+   let stringimcThinness, stringimcNormal,  stringimcOverweight,  stringimcObesityS,  stringimcObesity, stringimcSlogan
+    if(lang == 1){
+        stringInvalid = pt_br.invalid
+        stringimcThinness = pt_br.imc.thinness
+        stringimcNormal = pt_br.imc.normal
+        stringimcOverweight = pt_br.imc.overweight
+        stringimcObesity = pt_br.imc.obesity
+        stringimcObesityS = pt_br.imc.obesityS
+        stringimcSlogan = pt_br.imc.slogan
+    }else if( lang == 2){
+        stringInvalid = en.invalid
+        stringimcThinness = en.imc.thinness
+        stringimcNormal = en.imc.normal
+        stringimcOverweight = en.imc.overweight
+        stringimcObesity = en.imc.obesity
+        stringimcObesityS = en.imc.obesityS
+        stringimcSlogan = en.imc.slogan
+    }
    if(isNaN(height))
     {
-        result = Stringinvalid
+        result = stringInvalid
     }else if(isNaN(weight))
     {
-        result = Stringinvalid
+        result = stringInvalid
     }else
 
      {  let resultImc = parseInt(weight / (height * height)) 
         let imcGrau 
 
         if(resultImc < 18.5){
-            imcGrau = StringimcThinness
+            imcGrau = stringimcThinness
         }else if( resultImc <= 24.9) {
-            imcGrau = StringimcNormal
+            imcGrau = stringimcNormal
         }else if(resultImc <= 29.9){
-            imcGrau = StringimcOverweight
+            imcGrau = stringimcOverweight
         }else if( resultImc <= 39.9){
-            imcGrau = StringimcObesity
+            imcGrau = stringimcObesity
         }else{
-            imcGrau = StringimcObesityS
+            imcGrau = stringimcObesityS
         }
         
-        result = `${StringimcSlogan} ${resultImc} - ${imcGrau}`
+        result = `${stringimcSlogan} ${resultImc} - ${imcGrau}`
     }
     
     ResutsAplication(result)
 })
+
 
 calculatorDensity.addEventListener("submit", (event) => {
     event.preventDefault()
@@ -380,26 +441,41 @@ calculatorDensity.addEventListener("submit", (event) => {
     const supraIliac= parseFloat(document.querySelector("#CalculatorDensity #supraIliac").value)
     const optionGender = document.getElementsByName('gender')
     let valorGender
-    let result 
-    let resultDensity, resultFat
+    let result, resultDensity, resultFat
+    let stringSloganD, stringSloganF
+
     
     for(const op of optionGender){
         if(op.checked){
             valorGender = op.value
         }
     }
-
     
-    if(valorGender == 'masculine'){
-        resultDensity = 1.10938 - 0.0008267 * (haunch + triceps + supraIliac)+  0.0000016* ((haunch + triceps + supraIliac) * (haunch + triceps + supraIliac))  - 0.0002574*age
+    if(lang == 1){
+        stringInvalid  = pt_br.invalid
+        stringSloganD = pt_br.corporalDensity.sloganD
+        stringSloganF = pt_br.corporalDensity.sloganF
     }else{
-        resultDensity  =  1.0994921 - 0.0009929 * (haunch + triceps + supraIliac) +  0.0000023* ((haunch + triceps + supraIliac) * (haunch + triceps + supraIliac))  - 0.0001392 * age
+        stringInvalid  = en.invalid
+        stringSloganD = en.corporalDensity.sloganD
+        stringSloganF = en.corporalDensity.sloganF
     }
 
-    resultFat =  [(4,95 / resultDensity) - 4.50] 
+    if( !isNaN(weight) && !isNaN(age) && !isNaN(haunch) && !isNaN(triceps) & !isNaN(supraIliac) && typeof(valorGender) !== 'undefined') {
 
-    result = `Densidade corporal ${parseInt(resultDensity)} </br> Percentual de gordura: ${parseInt(resultFat)}`
-   
+        if(valorGender == 'masculine'){
+            resultDensity = 1.10938 - 0.0008267 * (haunch + triceps + supraIliac) +  0.0000016* ((haunch + triceps + supraIliac) * (haunch + triceps + supraIliac))  - 0.0002574 * age
+        }else{
+            resultDensity  =  1.0994921 - 0.0009929 * (haunch + triceps + supraIliac) +  0.0000023 * ((haunch + triceps + supraIliac) * (haunch + triceps + supraIliac))  - 0.0001392 * age
+        }
+
+        resultFat =  [(4.95 / resultDensity) - 4.50] * 100
+
+        result = `${stringSloganD} ${parseFloat(resultDensity)} </br> ${stringSloganF} ${parseInt(resultFat) + '%'}`
+    }else{
+        result = stringInvalid
+    }
+
     ResutsAplication(result)
     
 })
@@ -412,8 +488,8 @@ calculatorEnergy.addEventListener("submit", (event) => {
     const age = parseInt(document.querySelector("#CalculatorEnergy #age").value)
     const optionGender = document.getElementsByName('gender')
     const optionActivity = document.getElementsByName('activity')
-    let valorGender
-    let valorActvity
+    let valorGender, valorActvity
+    let stringSlogan
     let result = 0
 
     for(const op of optionGender){
@@ -427,7 +503,15 @@ calculatorEnergy.addEventListener("submit", (event) => {
             valorActvity = op.value
         }
     }
-    
+
+    if(lang == 1){
+        stringInvalid  = pt_br.invalid
+        stringSlogan = pt_br.dailyEnergyExpenditure.slogan
+    }else{
+        stringInvalid  = en.invalid
+        stringSlogan = en.dailyEnergyExpenditure.slogan
+    }
+
     if( !isNaN(height) && !isNaN(weight) && !isNaN(age) && typeof(valorGender) !== 'undefined' && typeof(valorActvity) !== 'undefined') {
         
 
@@ -454,10 +538,10 @@ calculatorEnergy.addEventListener("submit", (event) => {
                 break
         }
 
-        result = `Seus gasto energético diário é de ${result} kcal`
+        result = `${stringSlogan} ${result} kcal`
 
     }else{
-        result = Stringinvalid
+        result = stringInvalid
     }
     ResutsAplication(result)
     
@@ -472,11 +556,20 @@ calculatorMetabolic.addEventListener("submit", (event) => {
     const optionGender = document.getElementsByName('gender')
     let valorGender
     let result = 0
+    let stringSlogan
     
     for(const op of optionGender){
         if(op.checked){
             valorGender = op.value
         }
+    }
+
+    if(lang == 1){
+        stringInvalid  = pt_br.invalid
+        stringSlogan = pt_br.basalMetabolicRate.slogan
+    }else{
+        stringInvalid  = en.invalid
+        stringSlogan = en.basalMetabolicRate.slogan
     }
     
     if( !isNaN(height) && !isNaN(weight) && !isNaN(age) && typeof(valorGender) !== 'undefined') {
@@ -486,10 +579,10 @@ calculatorMetabolic.addEventListener("submit", (event) => {
         }else{
             result = 655 + (9.6 * weight) + 1.8 * (height * 100) - ( age * 4.7)
         }
-        result = `Seus TBM é de ${result} kcal`
+        result = `${stringSlogan} ${result} kcal`
 
     }else{
-        result = Stringinvalid
+        result = stringInvalid
     }
 
     ResutsAplication(result)
@@ -502,12 +595,29 @@ calculatorNutritional.addEventListener("submit", (event) => {
     const protein = parseFloat(document.querySelector("#protein").value)
     const fat = parseFloat(document.querySelector("#fat").value)
     let result
+    let stringCarb, stringProtein, stringFat
 
-    let tCarb = parseInt((calories / 4 /  (carbohydrates * 100)) * 1000)
-    let tProtein = parseInt((calories / 4 / (protein * 100)) * 1000)
-    let tFat = parseInt((calories / 9 / (fat * 100)) * 1000)
+    if(lang == 1){
+        stringInvalid = pt_br.invalid
+        stringCarb = pt_br.nutritionalNeeds.sloganCarb
+        stringProtein = pt_br.nutritionalNeeds.sloganProtein
+        stringFat = pt_br.nutritionalNeeds.sloganFat
+    }else{
+        stringInvalid = en.invalid
+        stringCarb = en.nutritionalNeeds.sloganCarb
+        stringProtein = en.nutritionalNeeds.sloganProtein
+        stringFat = en.nutritionalNeeds.sloganFat
+    }
 
-    result = `Carb: ${tCarb}g </br> Protein: ${tProtein}g</br> Fat: ${tFat}g`
+    if(!isNaN(calories) && !isNaN(carbohydrates) && !isNaN(protein) && !isNaN(fat)){
+        let tCarb = parseInt((calories  /  (carbohydrates * 100)) / 4 * 1000)
+        let tProtein = parseInt((calories  / (protein * 100)) / 4 * 1000)
+        let tFat = parseInt((calories / (fat * 100)) / 9  * 1000)
+
+        result = `${stringCarb} ${tCarb}g </br> ${stringProtein} ${tProtein}g </br> ${stringFat} ${tFat}g`
+    }else{
+        result = stringInvalid
+    }
     ResutsAplication(result)
 })
 

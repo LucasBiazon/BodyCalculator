@@ -85,7 +85,7 @@ nav{
 
 #optionsCalculator{
     position: absolute;
-    width: 220px;
+    width: 250px;
     top: 55px;
     background-color: var(--branco);
     border-bottom-right-radius: 30px ;
@@ -196,7 +196,7 @@ main{
 
 #results{
     padding: 2%;
-    width: 30%;
+    width: 35%;
     background-color: var(--branco);
     border-radius: 15px;
 }
