@@ -14,7 +14,17 @@ const translate = {
         age: "Age (y):",
         gender: "Gender",
         masculine: "Masculine",
-        feminine: "Feminine"
+        feminine: "Feminine",
+        activity: "Physical Activity",
+        sedentary: "Sedentary",
+        mildly: "Mildly active",
+        moderately: "Moderately active",
+        very: "Very active",
+        extremely: "Extremely active",
+        calories: "Calories Total:",
+        carbohydrates: "Carbohydrates Percentage:",
+        protein:"Protein Percentage:",
+        fat: "Fat percentage:"
     }, 
     pt_br: {
         typeCalculator: "Tipo de Calculadora",
@@ -31,7 +41,17 @@ const translate = {
         age: "Idade (anos):",
         gender: "Gênero",
         masculine: "Masculino",
-        feminine: "Feminino"
+        feminine: "Feminino",
+        activity: "Ativida física", 
+        sedentary: "Sedentário",
+        mildly: "Levemente ativo",
+        moderately: "Moderadamente ativo",
+        very: "Muito ativo",
+        extremely: "Extremamente ativo",
+        calories: "Total de calorias:",
+        carbohydrates: "Porcentagem de carboidrato:",
+        protein:"Porcentagem de proteína: ",
+        fat: "Porcentagem de gordura:"
     }
 }
 // Lang
@@ -55,16 +75,22 @@ const opNutritional= document.querySelector("#opNutritional")
 const calculator = document.querySelector("#Calculator")
 const loading = document.querySelector("#LoadingCalculator")
 const calculatorImc = document.querySelector("#CalculatorIMC")
+const titleCalculatorImc = document.querySelector("#titleCalculatorImc")
 const calculatorDensity = document.querySelector("#CalculatorDensity")
+const titleCalculatorDensity = document.querySelector("#titleCalculatorDensity")
 const calculatorEnergy = document.querySelector("#CalculatorEnergy")
+const titleCalculatorEnergy = document.querySelector("#titleCalculatorEnergy")
 const calculatorMetabolic = document.querySelector("#CalculatorMetabolic")
+const titleCalculatorMetabolic = document.querySelector("#titleCalculatorMetabolic")
 const calculatorNutritional = document.querySelector("#CalculatorNutritional")
+const titleCalculatorNutritional = document.querySelector("#titleCalculatorNutritional")
 
 // Results
 const results = document.querySelector("#results")
 const loadingResults = document.querySelector("#loadingResults")
 
 // Strings Elements
+
 const StringBtCalculate = document.querySelectorAll(".btCalculator")
 const StringHeight = document.querySelectorAll(".height")
 const StringWeight = document.querySelectorAll(".weight")
@@ -72,9 +98,16 @@ const StringAge = document.querySelectorAll(".age")
 const StringGender = document.querySelectorAll(".gender")
 const StringMasculine = document.querySelectorAll(".masculine")
 const StringFeminine = document.querySelectorAll(".feminine")
-
-
-
+const StringPhysicalActivity = document.querySelectorAll(".activity")
+const StringSedentary = document.querySelectorAll(".sedentary")
+const StringMildly = document.querySelectorAll(".mildly") 
+const StringModerately = document.querySelectorAll(".moderately")
+const StringVery = document.querySelectorAll(".very")
+const StringExtremely = document.querySelectorAll(".extremely")
+const StringCalories = document.querySelector(".calories")
+const StringCarbohydrates = document.querySelector(".carbohydrates")
+const StringProtein = document.querySelector(".protein")
+const StringFat = document.querySelector(".fat")
 let invalid = translate.en.imc.invalid
 
 
@@ -93,11 +126,21 @@ function TranslatePt_Br(){
     titleOptionsCalculator.innerHTML = translate.pt_br.typeCalculator
     loading.innerHTML = translate.pt_br.setCalculator
     loadingResults.innerHTML = translate.pt_br.results
+    titleCalculatorImc.innerHTML = translate.pt_br.imc
+    titleCalculatorDensity.innerHTML = translate.pt_br.corporalDensity
+    titleCalculatorEnergy.innerHTML = translate.pt_br.dailyEnergyExpenditure
+    titleCalculatorMetabolic.innerHTML = translate.pt_br.basalMetabolicRate
+    titleCalculatorNutritional.innerHTML = translate.pt_br.nutritionalNeeds
     opIMC.innerHTML = translate.pt_br.imc
     opDensity.innerHTML = translate.pt_br.corporalDensity
     opEnergy.innerHTML = translate.pt_br.dailyEnergyExpenditure
     opMetabolic.innerHTML = translate.pt_br.basalMetabolicRate
     opNutritional.innerHTML = translate.pt_br.nutritionalNeeds
+    StringCalories.innerHTML  = translate.pt_br.calories
+    StringCarbohydrates.innerHTML = translate.pt_br.carbohydrates
+    StringProtein.innerHTML  = translate.pt_br.protein
+    StringFat.innerHTML  = translate.pt_br.fat
+
     for(const i of StringBtCalculate){
         i.innerHTML= translate.pt_br.submit
     }
@@ -119,18 +162,42 @@ function TranslatePt_Br(){
     for(const s of StringFeminine){
         s.innerHTML= translate.pt_br.feminine
     }
-  
+    for(const s of StringPhysicalActivity){
+        s.innerHTML= translate.pt_br.activity
+    }
+    for(const s of StringSedentary){
+        s.innerHTML= translate.pt_br.sedentary
+    }
+    for(const s of StringMildly){
+        s.innerHTML= translate.pt_br.mildly
+    }
+    for(const s of StringVery){
+        s.innerHTML= translate.pt_br.very
+    }
+    for(const s of StringExtremely){
+        s.innerHTML= translate.pt_br.extremely
+    }
+    
 }
 
 function TranslateEn(){
     titleOptionsCalculator.innerHTML = translate.en.typeCalculator
     loading.innerHTML = translate.en.setCalculator
     loadingResults.innerHTML = translate.en.results
+    titleCalculatorImc.innerHTML = translate.en.imc
+    titleCalculatorDensity.innerHTML = translate.en.corporalDensity
+    titleCalculatorEnergy.innerHTML = translate.en.dailyEnergyExpenditure
+    titleCalculatorMetabolic.innerHTML = translate.en.basalMetabolicRate
+    titleCalculatorNutritional.innerHTML = translate.en.nutritionalNeeds
     opIMC.innerHTML = translate.en.imc
     opDensity.innerHTML = translate.en.corporalDensity
     opEnergy.innerHTML = translate.en.dailyEnergyExpenditure
     opMetabolic.innerHTML = translate.en.basalMetabolicRate
     opNutritional.innerHTML = translate.en.nutritionalNeeds
+    StringCalories.innerHTML  = translate.en.calories
+    StringCarbohydrates.innerHTML = translate.en.carbohydrates
+    StringProtein.innerHTML  = translate.en.protein
+    StringFat.innerHTML  = translate.en.fat
     for(const i of StringBtCalculate){
         i.innerHTML= translate.en.submit
     }
@@ -152,7 +219,21 @@ function TranslateEn(){
     for(const s of StringFeminine){
         s.innerHTML= translate.en.feminine
     }
-  
+    for(const s of StringPhysicalActivity){
+        s.innerHTML= translate.en.activity
+    }
+    for(const s of StringSedentary){
+        s.innerHTML= translate.en.sedentary
+    }
+    for(const s of StringMildly){
+        s.innerHTML= translate.en.mildly
+    }
+    for(const s of StringVery){
+        s.innerHTML= translate.en.very
+    }
+    for(const s of StringExtremely){
+        s.innerHTML= translate.en.extremely
+    }
 }
 
 

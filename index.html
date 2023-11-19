@@ -80,7 +80,7 @@
             <p id="LoadingCalculator">Set a calculator type...</p>
 
             <div id="CalculatorIMC" class="disabled divCalculator">
-                <h1 id="titleCalculator" class="titleCalculator"> 
+                <h1 id="titleCalculatorImc" class="titleCalculator"> 
                     IMC
                 </h1>
                 <div class="inputsCalculator">
@@ -98,7 +98,7 @@
             </div>
 
             <div id="CalculatorDensity" class="disabled divCalculator">
-                <h1 id="titleCalculator" class="titleCalculator"> 
+                <h1 id="titleCalculatorDensity" class="titleCalculator"> 
                     Corporal Density
                 </h1>
                 <div class="inputsCalculator">
@@ -138,7 +138,7 @@
             </div>
 
             <div id="CalculatorEnergy" class="disabled divCalculator">
-                <h1 id="titleCalculator" class="titleCalculator"> 
+                <h1 id="titleCalculatorEnergy" class="titleCalculator"> 
                     Daily Energy Expenditure
                 </h1>
                 <div class="inputsCalculator">
@@ -170,26 +170,26 @@
                         </div>
                     </div> 
                     <div class="radioCalculator">
-                        <p class="inputTitleCalculator" class="activity">Physical activity:</p>
+                        <p class="inputTitleCalculator activity">Physical activity:</p>
                         <div>
                             <input type="radio" name="activity" id="activity" value="activityS">
-                            <label for="activity">Sedentary</label>
+                            <label for="activity" class="sedentary">Sedentary</label>
                         </div>
                         <div>
                             <input type="radio" name="activity" id="activity" value="activityL">
-                            <label for="activity">Mildly active</label>
+                            <label for="activity" class="mildly">Mildly active</label>
                         </div>
                         <div>
                             <input type="radio" name="activity" id="activity" value="activityM">
-                            <label for="activity">Moderately Active</label>
+                            <label for="activity" class="moderately">Moderately active</label>
                         </div>
                         <div>
                             <input type="radio" name="activity" id="activity" value="activityC">
-                            <label for="activity">Very active</label>
+                            <label for="activity" class="very">Very active</label>
                         </div>
                         <div>
                             <input type="radio" name="activity" id="activity" value="activityLE">
-                            <label for="activity">Extremely active</label>
+                            <label for="activity" class="extremely">Extremely active</label>
                         </div>
                     </div>
                         <button type="submit" id="btCalculator" class="btCalculator"  onclick="CalculateEnergy()">Calculate</button>
@@ -198,7 +198,7 @@
             </div>
 
             <div id="CalculatorMetabolic" class="disabled divCalculator">
-                <h1 id="titleCalculator" class="titleCalculator"> 
+                <h1 id="titleCalculatorMetabolic" class="titleCalculator"> 
                     Basal Metabolic Rate              
                 </h1>
                 <div class="inputsCalculator">
@@ -230,26 +230,26 @@
                         </div>
                     </div>
                     <div class="radioCalculator">
-                        <p class="inputTitleCalculator">Physical activity:</p>
+                        <p class="inputTitleCalculator activity">Physical activity:</p>
                         <div>
                             <input type="radio" name="activity" id="activity" value="activityS">
-                            <label for="activity">Sedentary</label>
+                            <label for="activity" class="sedentary">Sedentary</label>
                         </div>
                         <div>
                             <input type="radio" name="activity" id="activity" value="activityL">
-                            <label for="activity">Mildly active</label>
+                            <label for="activity" class="mildly">Mildly active</label>
                         </div>
                         <div>
                             <input type="radio" name="activity" id="activity" value="activityM">
-                            <label for="activity">Moderately Active</label>
+                            <label for="activity" class="moderately">Moderately Active</label>
                         </div>
                         <div>
                             <input type="radio" name="activity" id="activity" value="activityC">
-                            <label for="activity">Very active</label>
+                            <label for="activity" class="very">Very active</label>
                         </div>
                         <div>
                             <input type="radio" name="activity" id="activity" value="activityLE">
-                            <label for="activity">Extremely active</label>
+                            <label for="activity" class="extremely">Extremely active</label>
                         </div>
                     </div>
                     <button type="submit" class="btCalculator"  id="btCalculator">Calculate</button>
@@ -258,27 +258,27 @@
             
 
             <div id="CalculatorNutritional" class="disabled divCalculator">
-                <h1 id="titleCalculator" class="titleCalculator"> 
+                <h1 id="titleCalculatorNutritional" class="titleCalculator"> 
                     Nutritional needs
                 </h1>
                 <div class="inputsCalculator">
                     <div class="inputCalculator">
-                        <label for="calories" class="inputTitleCalculator">Calories Total:</label>
+                        <label for="calories" class="inputTitleCalculator calories">Calories Total:</label>
                         <input type="number" name="calories" id="calories">
                     </div>
 
                     <div class="inputCalculator">
-                        <label for="carbohydrates:" class="inputTitleCalculator">Carbohydrates Percentage:</label>
-                        <input type="number" name="carbohydrates:" id="carbohydrates:">
+                        <label for="carbohydrates:" class="inputTitleCalculator carbohydrates">Carbohydrates Percentage:</label>
+                        <input type="number" name="carbohydrates:" id="carbohydrates">
                     </div>
 
                     <div class="inputCalculator">
-                        <label for="protein" class="inputTitleCalculator">Protein Percentage:</label>
+                        <label for="protein" class="inputTitleCalculator protein">Protein Percentage:</label>
                         <input type="number" name="protein" id="protein">
                     </div>
 
                     <div class="inputCalculator">
-                        <label for="fat" class="inputTitleCalculator">Fat percentage</label>
+                        <label for="fat" class="inputTitleCalculator fat">Fat percentage:</label>
                         <input type="number" name="fat" id="fat">
                     </div>
             
