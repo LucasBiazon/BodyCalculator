@@ -85,15 +85,15 @@
                 </h1>
                 <div class="inputsCalculator">
                     <div class="inputCalculator">
-                        <label for="height" class="inputTitleCalculator">Height (m):</label>
+                        <label for="height" class="inputTitleCalculator height">Height (m):</label>
                         <input type="number" name="height" id="height" step="0.01" > 
                     </div>
 
                     <div class="inputCalculator">
-                        <label for="weight" class="inputTitleCalculator">Weight (kg):</label>
+                        <label for="weight" class="inputTitleCalculator weight">Weight (kg):</label>
                         <input type="number" name="weight" id="weight" step="0.01" >
                     </div>
-                    <button type="submit" id="btCalculator" onclick="CalculateImc()">Calculate</button>
+                    <button type="submit" id="btCalculator" class="btCalculator" onclick="CalculateImc()">Calculate</button>
                 </div>
             </div>
 
@@ -103,23 +103,23 @@
                 </h1>
                 <div class="inputsCalculator">
                     <div class="inputCalculator">
-                        <label for="age" class="inputTitleCalculator">Age (y):</label>
+                        <label for="age" class="inputTitleCalculator age">Age (y):</label>
                         <input type="number" name="age" id="age" >
                     </div>
 
                     <div class="inputCalculator">
-                        <label for="weight" class="inputTitleCalculator">Weight (kg):</label>
-                        <input type="number" name="weight" id="weight" step="0.01">
+                        <label for="weight" class="inputTitleCalculator weight">Weight (kg):</label>
+                        <input type="number" name="weight" id="weight" step="0.01" >
                     </div>
                     <div class="radioCalculator">
-                        <p class="inputTitleCalculator">Gender:</p>
+                        <p class="inputTitleCalculator" class="gender">Gender:</p>
                         <div>
                             <input type="radio" name="gender" id="gender" value="masculine">
-                            <label for="gender">Masculine</label>
+                            <label for="gender" class="masculine">Masculine</label>
                         </div>
                         <div>
                             <input type="radio" name="gender" id="gender" value="feminine">
-                            <label for="gender">Feminine</label>
+                            <label for="gender" class="feminine">Feminine</label>
                         </div>
                     </div>
                     <div class="radioCalculator">
@@ -133,7 +133,7 @@
                             <label for="bend">7 bends</label>
                         </div>
                     </div>
-                    <button type="submit" id="btCalculator" onclick="">Calculate</button>
+                    <button type="submit" id="btCalculator"  class="btCalculator"  onclick="">Calculate</button>
                 </div>
             </div>
 
@@ -144,33 +144,33 @@
                 <div class="inputsCalculator">
 
                     <div class="inputCalculator">
-                        <label for="height" class="inputTitleCalculator">Height (m):</label>
-                        <input type="number" name="" id="height" step="0.01">
+                        <label for="height" class="inputTitleCalculator height">Height (m):</label>
+                        <input type="number" name="" id="height" step="0.01" >
                     </div>
 
                     <div class="inputCalculator">
-                        <label for="weight" class="inputTitleCalculator">Weight (kg):</label>
+                        <label for="weight" class="inputTitleCalculator weight">Weight (kg):</label>
                         <input type="number" name="" id="weight" step="0.01">
                     </div>
 
                     <div class="inputCalculator">
-                        <label for="age" class="inputTitleCalculator">Age (y):</label>
+                        <label for="age" class="inputTitleCalculator age">Age (y):</label>
                         <input type="number" name="" id="age" >
                     </div>
 
                     <div class="radioCalculator">
-                        <p class="inputTitleCalculator">Gender:</p>
+                        <p class="inputTitleCalculator gender">Gender:</p>
                         <div>
                             <input type="radio" name="gender" id="gender" value="masculine">
-                            <label for="gender">Masculine</label>
+                            <label for="gender" class="masculine">Masculine</label>
                         </div>
                         <div>
                             <input type="radio" name="gender" id="gender" value="feminine">
-                            <label for="gender">Feminine</label>
+                            <label for="gender" class="feminine">Feminine</label>
                         </div>
                     </div> 
                     <div class="radioCalculator">
-                        <p class="inputTitleCalculator">Physical activity:</p>
+                        <p class="inputTitleCalculator" class="activity">Physical activity:</p>
                         <div>
                             <input type="radio" name="activity" id="activity" value="activityS">
                             <label for="activity">Sedentary</label>
@@ -192,7 +192,7 @@
                             <label for="activity">Extremely active</label>
                         </div>
                     </div>
-                        <button type="submit" id="btCalculator" onclick="CalculateEnergy()">Calculate</button>
+                        <button type="submit" id="btCalculator" class="btCalculator"  onclick="CalculateEnergy()">Calculate</button>
                     
                 </div>
             </div>
@@ -204,29 +204,29 @@
                 <div class="inputsCalculator">
 
                     <div class="inputCalculator">
-                        <label for="height" class="inputTitleCalculator">Height (m):</label>
-                        <input type="number"  id="height">
+                        <label for="height" class="inputTitleCalculator height">Height (m):</label>
+                        <input type="number"  id="height" >
                     </div>
 
                     <div class="inputCalculator">
-                        <label for="weight" class="inputTitleCalculator">Weight (kg):</label>
-                        <input type="number"  id="weight">
+                        <label for="weight" class="inputTitleCalculator weight">Weight (kg):</label>
+                        <input type="number"  id="weight" >
                     </div>
 
                     <div class="inputCalculator">
-                        <label for="age" class="inputTitleCalculator">Age (y):</label>
-                        <input type="number"  id="age">
+                        <label for="age" class="inputTitleCalculator age">Age (y):</label>
+                        <input type="number"  id="age" >
                     </div>
 
                     <div class="radioCalculator">
-                        <p class="inputTitleCalculator">Gender:</p>
+                        <p class="inputTitleCalculator gender">Gender:</p>
                         <div>
                             <input type="radio" name="gender" id="gender" value="masculine">
-                            <label for="gender">Masculine</label>
+                            <label for="gender" class="masculine">Masculine</label>
                         </div>
                         <div>
                             <input type="radio" name="gender" id="gender" value="feminine">
-                            <label for="gender">Feminine</label>
+                            <label for="gender" class="feminine">Feminine</label>
                         </div>
                     </div>
                     <div class="radioCalculator">
@@ -252,7 +252,7 @@
                             <label for="activity">Extremely active</label>
                         </div>
                     </div>
-                    <button type="submit" id="btCalculator">Calculate</button>
+                    <button type="submit" class="btCalculator"  id="btCalculator">Calculate</button>
                 </div>
             </div>
             
@@ -282,7 +282,7 @@
                         <input type="number" name="fat" id="fat">
                     </div>
             
-                    <button type="submit" id="btCalculator">Calculate</button>
+                    <button type="submit" class="btCalculator"  id="btCalculator">Calculate</button>
                 </div>
             </div>
             
