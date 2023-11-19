@@ -5,14 +5,29 @@
 
     --blue-light: rgb(24, 140, 185);
     --blue-dark: rgb(11, 64, 85);
+    --shadow: rgba(207,207,207,0.77);
+    --positionR: 11px;
+    --transition: 0.2s;
+
 }
 
+.dark-mode{
+    --preto: #f8f8f8;
+    --pretoOpacity: #f8f8f8d7;
+    --branco: #252525;
+
+    --blue-light: rgb(11, 64, 85);
+    --blue-dark: rgb(24, 140, 185);
+    --shadow: rgba(207, 207, 207, 0.493);
+    --positionR: 8px;
+}
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     list-style: none;
     font-family: "Montserrat";
+    transition: var(--transition);
 }
 
 html, body{
@@ -80,8 +95,12 @@ nav{
 
 #titleOptionsCalculator{
     font-size: 0.95rem;
+    color: var(--preto);
 }   
 
+#btOptionsCalculator svg{
+    color: var(--preto);
+}
 
 #optionsCalculator{
     position: absolute;
@@ -91,6 +110,7 @@ nav{
     border-bottom-right-radius: 30px ;
     border-top-right-radius: 15px ;
     padding: 2% 4%;
+    box-shadow: var(--positionR) 7px 7px -6px var(--shadow);
 }
 
 #optionsCalculator li{
@@ -98,11 +118,21 @@ nav{
     margin-top: 2px;
 }
 
+#optionsCalculator li button{
+    color: var(--preto);
+}
 
-.theme button svg{
+
+#theme{
+    transition: 1s;
+}
+#theme button svg{
     height: 20px;
     width: 20px;
+    color: var(--preto);
+    
 }
+
 
 #lang{
     width: 200px;
@@ -113,8 +143,7 @@ nav{
 #btLang{
     gap: 5px;
     font-size: 1.2rem;
-    
-
+    color: var(--preto)
 }
 
 #optionsLang{
@@ -125,7 +154,10 @@ nav{
     gap: 10px;
     border-radius: 0px 0px 10px 10px;
     margin-top: 5px;
-
+    box-shadow: var(--positionR) 7px 7px -6px var(--shadow);
+}
+#optionsLang button{
+    color: var(--preto)
 }
 
 
@@ -146,8 +178,12 @@ main{
     /* border: 3px solid var(--blue-dark); */
     border-radius: 15px;
     padding: 2%;
-    box-shadow: 11px 15px 11px -6px rgba(207,207,207,0.77);}
+    box-shadow: var(--positionR) 7px 7px -6px var(--shadow);
+}
 
+#LoadingCalculator{
+    color: var(--preto);
+}
 .titleCalculator{
     color: var(--blue-dark);
     margin-bottom: 20px;
@@ -165,6 +201,7 @@ main{
 }
 .inputTitleCalculator{
     font-weight: 500;
+    color: var(--preto);
 }
 .inputCalculator input{
     width: 100%;
@@ -174,6 +211,7 @@ main{
     background: transparent;
     position: relative;
     outline: 0;
+    color: var(--preto);
 }
 
 .radioCalculator{
@@ -183,6 +221,12 @@ main{
 
 .radioCalculator input{
     margin-left: 10px;
+    color: var(--preto);
+}
+
+.radioCalculator label{
+    font-family: 'Montserrat';
+    color: var(--preto);
 }
 
 #btCalculator{
@@ -191,7 +235,7 @@ main{
     height: 30px;
     font-size: 1.1rem;
     border-radius: 30px;
-    color: var(--branco);
+    color: #f8f8f8;
 }
 
 #results{
@@ -199,7 +243,9 @@ main{
     width: 35%;
     background-color: var(--branco);
     border-radius: 15px;
+    color: var(--preto);
 }
+
 
 
 ::-webkit-scrollbar{ width: 10px;}
@@ -216,7 +262,7 @@ main{
 /* hover */
 #optionsLang li:hover button, #optionsCalculator li:hover button{
     background-color: var(--blue-dark);
-    color: var(--branco);
+    color: #f8f8f8;
     border-radius: 30px;
     padding: 3px 5px;
 }
@@ -234,4 +280,11 @@ main{
 .rotate{
     transform: rotate(-180deg);
     transition: 0.2s;
+}
+
+
+@media screen and (max-width: 900px){
+    #Calculator, #results{
+        width: 70%;
+    }
 }

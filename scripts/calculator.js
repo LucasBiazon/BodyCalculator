@@ -138,6 +138,12 @@ const DivOptionsLang = document.querySelector("#DivOptionsLang")
 const optionPt_Br = document.querySelector("#optionPt_Br")
 const optionEn = document.querySelector("#optionEn")
 
+// theme
+const btTheme = document.querySelector("#theme")
+const themeMoon = document.querySelector("#ThemeMoon")
+const themeSun = document.querySelector("#ThemeSun")
+
+
 // Types Calculator
 const btOptionsCalculator = document.querySelector("#btOptionsCalculator")
 const titleOptionsCalculator = document.querySelector("#titleOptionsCalculator")
@@ -628,3 +634,11 @@ function ResutsAplication(result){
     pResult. innerHTML = result
     results.appendChild(pResult)
 }
+
+
+btTheme.addEventListener('click', () => {
+    const body = document.body;
+    body.classList.toggle('dark-mode');
+    themeMoon.classList.toggle('disabled')
+    themeSun.classList.toggle("disabled")
+  })
