@@ -99,7 +99,7 @@
 
             <form id="CalculatorDensity" class="disabled divCalculator">
                 <h1 id="titleCalculatorDensity" class="titleCalculator"> 
-                    Corporal Density
+                    Corporal Density (3 bends)
                 </h1>
                 <div class="inputsCalculator">
                     <div class="inputCalculator">
@@ -112,7 +112,7 @@
                         <input type="number" name="weight" id="weight" step="0.01" >
                     </div>
                     <div class="radioCalculator">
-                        <p class="inputTitleCalculator" class="gender">Gender:</p>
+                        <p class="inputTitleCalculator gender">Gender:</p>
                         <div>
                             <input type="radio" name="gender" id="gender" value="masculine">
                             <label for="gender" class="masculine">Masculine</label>
@@ -122,18 +122,20 @@
                             <label for="gender" class="feminine">Feminine</label>
                         </div>
                     </div>
-                    <div class="radioCalculator">
-                        <p class="inputTitleCalculator">Calculation method</p>
-                        <div>
-                            <input type="radio" name="bend" id="bend" value="3">
-                            <label for="bend">3 bends</label>
-                        </div>
-                        <div>
-                            <input type="radio" name="bend" id="bend" value="7">
-                            <label for="bend">7 bends</label>
-                        </div>
+                    <div class="inputCalculator">
+                        <label for="haunch" class="inputTitleCalculator ">Haunch (mm):</label>
+                        <input type="number" name="haunch" id="haunch" step="0.01" >
                     </div>
-                    <button type="submit" id="btCalculator"  class="btCalculator"  onclick="">Calculate</button>
+                    <div class="inputCalculator">
+                        <label for="triceps" class="inputTitleCalculator ">Sriceps (mm):</label>
+                        <input type="number" name="triceps" id="triceps" step="0.01" >
+                    </div>
+                    <div class="inputCalculator">
+                        <label for="supraIliac" class="inputTitleCalculator ">Supra iliac (mm):</label>
+                        <input type="number" name="supra iliac" id="supraIliac" step="0.01" >
+                    </div>
+                   
+                    <button type="submit" id="btCalculator"  class="btCalculator">Calculate</button>
                 </div>
             </form>
 

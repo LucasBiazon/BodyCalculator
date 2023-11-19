@@ -13,7 +13,7 @@ const translate = {
         imcObesityS:"Severe obesity",
         imcSlogan: "Your IMC are ",
 
-        corporalDensity: "Corporal Density",
+        corporalDensity: "Corporal Density (3 bends)",
         dailyEnergyExpenditure: "Daily Energy Expenditure",
         basalMetabolicRate: "Basal Metabolic Rate",
         nutritionalNeeds: "Nutritional needs",
@@ -49,7 +49,7 @@ const translate = {
         imcObesityS:"Obesidade severa",
         imcSlogan: "Seu IMC é de ",
 
-        corporalDensity: "Densidade corporal",
+        corporalDensity: "Densidade corporal (3 dobras)",
         dailyEnergyExpenditure: "Gasto energético diário",
         basalMetabolicRate: "Taxa de metabolismo Basal ",
         nutritionalNeeds: "Macronutrientes",
@@ -371,15 +371,38 @@ calculatorImc.addEventListener("submit", (event) => {
     ResutsAplication(result)
 })
 
-function CalculateDensity(){
-    const age = parseInt(document.querySelector(" #age").value) 
-    const weight = document.querySelector("#weight").value
-    const gender = document.getElementsByName("gender")
-    const bend = document.getElementsByName("bend")
+calculatorDensity.addEventListener("submit", (event) => {
+    event.preventDefault()
+    const age = parseInt(document.querySelector("#CalculatorDensity #age").value) 
+    const weight = parseFloat(document.querySelector("#CalculatorDensity #weight").value)
+    const haunch = parseFloat(document.querySelector("#CalculatorDensity #haunch").value)
+    const triceps = parseFloat(document.querySelector("#CalculatorDensity #triceps").value)
+    const supraIliac= parseFloat(document.querySelector("#CalculatorDensity #supraIliac").value)
+    const optionGender = document.getElementsByName('gender')
+    let valorGender
+    let result 
+    let resultDensity, resultFat
+    
+    for(const op of optionGender){
+        if(op.checked){
+            valorGender = op.value
+        }
+    }
 
+    
+    if(valorGender == 'masculine'){
+        resultDensity = 1.10938 - 0.0008267 * (haunch + triceps + supraIliac)+  0.0000016* ((haunch + triceps + supraIliac) * (haunch + triceps + supraIliac))  - 0.0002574*age
+    }else{
+        resultDensity  =  1.0994921 - 0.0009929 * (haunch + triceps + supraIliac) +  0.0000023* ((haunch + triceps + supraIliac) * (haunch + triceps + supraIliac))  - 0.0001392 * age
+    }
 
- 
-}
+    resultFat =  [(4,95 / resultDensity) - 4.50] 
+
+    result = `Densidade corporal ${parseInt(resultDensity)} </br> Percentual de gordura: ${parseInt(resultFat)}`
+   
+    ResutsAplication(result)
+    
+})
 
 calculatorEnergy.addEventListener("submit", (event) => {
 
