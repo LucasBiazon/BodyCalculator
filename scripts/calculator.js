@@ -99,7 +99,7 @@ const translate = {
         },
 
         nutritionalNeeds: {
-             title: "Macronutrientes",
+             title: "Nutrientes necessários",
              calories: "Total de calorias:",
              carbohydrates: "Percentual de carboidratos:",
              protein:"Percentual de proteínas:",
