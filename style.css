@@ -232,8 +232,8 @@ main{
 #alert{
     position: fixed;
     height: 20%;
-    min-height: 140px;
-    min-widht: 200px;
+    min-height: 200px;
+    min-widht: 300px;
     width: 30%;
     left: 50%;
     top: 0;
