@@ -1,10 +1,10 @@
 :root{
-    --preto: #252525;
-    --pretoOpacity: #25252527;
-    --branco: #f8f8f8;
+    --text: #252525;
+    --textOpacity: #25252527;
+    --background: #f8f8f8;
 
-    --blue-light: rgb(24, 140, 185);
-    --blue-dark: rgb(11, 64, 85);
+    --blue-principal: rgb(24, 140, 185);
+    --blue-secondary: rgb(11, 64, 85);
     --shadow: rgba(207,207,207,0.77);
     --positionR: 11px;
     --transition: 0.2s;
@@ -12,12 +12,12 @@
 }
 
 .dark-mode{
-    --preto: #f8f8f8;
-    --pretoOpacity: #f8f8f8d7;
-    --branco: #252525;
+    --text: #f8f8f8;
+    --textOpacity: #f8f8f8d7;
+    --background: #252525;
 
-    --blue-light: rgb(11, 64, 85);
-    --blue-dark: rgb(24, 140, 185);
+    --blue-principal: rgb(11, 64, 85);
+    --blue-secondary: rgb(24, 140, 185);
     --shadow: rgba(207, 207, 207, 0.493);
     --positionR: 8px;
 }
@@ -35,7 +35,7 @@ html, body{
 }
 
 body{
-    background-image: linear-gradient(250deg, var(--blue-light), var(--branco));
+    background-image: linear-gradient(250deg, var(--blue-principal), var(--background));
 }
 
 button{ 
@@ -45,7 +45,7 @@ button{
 }
 
 header, header > div, nav, #btOptionsCalculator, #optionsCalculator li, #lang,
-#btLang, #optionsLang, main, #Calculator,.inputsCalculator, .inputCalculator {
+#btLang, #optionsLang, main, #Calculator,.inputsCalculator, .inputCalculator, .radioCalculator, .icons {
     display: flex;
 }
 
@@ -57,13 +57,30 @@ nav, #btOptionsCalculator, #lang, #btLang, #optionsLang, main , #Calculator{
     justify-content: center;
 }
 
-#optionsCalculator li, #optionsCalculator li button, #optionsLang li button, #Calculator > div{
+nav, #lang, #optionsLang, main, .inputsCalculator, .inputCalculator, .radioCalculator, .icons
+{
+    flex-direction: column;
+}
+#optionsCalculator li, #optionsCalculator li button, #optionsLang li button, #Calculator > div, .inputCalculator input,
+.inputsCalculator, .inputCalculator
+{
     width: 100%;
 }
 
-
 header > div, nav, #lang, #btLang, #Calculator, #Calculator > div{
     height: 100%;
+}
+
+
+#titleOptionsCalculator, #btOptionsCalculator svg, #optionsCalculator li button,
+#btLang, #theme button svg, #optionsLang button, #LoadingCalculator, .inputTitleCalculator,
+.inputCalculator input, .radioCalculator input, .radioCalculator label,#results, #alert p, .icons svg{
+    color: var(--text);
+}
+
+#optionsCalculator, #optionsLang, #Calculator,
+#results, #alert{
+    background-color: var(--background);
 }
 
 #optionsCalculator li button, #optionsLang li button{
@@ -81,7 +98,6 @@ header > div{
 }
 
 nav{
-    flex-direction: column;
     position: relative;
 }
 
@@ -95,18 +111,12 @@ nav{
 
 #titleOptionsCalculator{
     font-size: 0.95rem;
-    color: var(--preto);
 }   
-
-#btOptionsCalculator svg{
-    color: var(--preto);
-}
 
 #optionsCalculator{
     position: absolute;
     width: 250px;
     top: 55px;
-    background-color: var(--branco);
     border-bottom-right-radius: 30px ;
     border-top-right-radius: 15px ;
     padding: 2% 4%;
@@ -118,55 +128,35 @@ nav{
     margin-top: 2px;
 }
 
-#optionsCalculator li button{
-    color: var(--preto);
-}
-
-
-#theme{
-    transition: 1s;
-}
 #theme button svg{
     height: 20px;
     width: 20px;
-    color: var(--preto);
     
 }
 
-
 #lang{
     width: 200px;
-    flex-direction: column;
     position: relative;
 }
 
 #btLang{
     gap: 5px;
     font-size: 1.2rem;
-    color: var(--preto)
 }
 
 #optionsLang{
     position: absolute;
-    background-color: var(--branco);
-    flex-direction: column;
     padding: 10px 5px;
     gap: 10px;
     border-radius: 0px 0px 10px 10px;
     margin-top: 5px;
     box-shadow: var(--positionR) 7px 7px -6px var(--shadow);
 }
-#optionsLang button{
-    color: var(--preto)
-}
-
-
 
 main{
-    background-image: linear-gradient(250deg, var(--blue-light), var(--branco));
+    background-image: linear-gradient(250deg, var(--blue-principal), var(--background));
     min-height: calc(100% - 60px);
     padding: 4% 10%;
-    flex-direction: column;
     gap: 30px;
     height: auto;
 }
@@ -174,64 +164,44 @@ main{
 #Calculator{
     height: auto;
     width: 35%;
-    background-color: var(--branco);
-    /* border: 3px solid var(--blue-dark); */
     border-radius: 15px;
     padding: 2%;
     box-shadow: var(--positionR) 7px 7px -6px var(--shadow);
 }
 
-#LoadingCalculator{
-    color: var(--preto);
-}
+
 .titleCalculator{
-    color: var(--blue-dark);
+    color: var(--blue-secondary);
     margin-bottom: 20px;
 }
 
 .inputsCalculator{
-    width: 100%;
-    flex-direction: column;
     gap: 15px;
 }
 .inputCalculator{
-    width: 100%;
-    flex-direction: column;
     gap: 5px;
 }
 .inputTitleCalculator{
     font-weight: 500;
-    color: var(--preto);
 }
 .inputCalculator input{
-    width: 100%;
     height: 30px;
     border: 0;
-    border-bottom: 1px solid var(--blue-dark);
+    border-bottom: 1px solid var(--blue-secondary);
     background: transparent;
     position: relative;
     outline: 0;
-    color: var(--preto);
 }
 
-.radioCalculator{
-    display: flex;
-    flex-direction: column;
-}
+
 
 .radioCalculator input{
     margin-left: 10px;
-    color: var(--preto);
-}
-
-.radioCalculator label{
-    font-family: 'Montserrat';
-    color: var(--preto);
 }
 
 #btCalculator{
     margin-top: 10px;
-    background-color: var(--blue-dark);
+    background-color: var(--blue-secondary);
     height: 30px;
     font-size: 1.1rem;
     border-radius: 30px;
@@ -241,27 +211,75 @@ main{
 #results{
     padding: 2%;
     width: 35%;
-    background-color: var(--branco);
+    
     border-radius: 15px;
-    color: var(--preto);
 }
 
 
 
 ::-webkit-scrollbar{ width: 10px;}
 
-::-webkit-scrollbar-track{ background-color: var(--blue-dark); }
+::-webkit-scrollbar-track{ background-color: var(--blue-secondary); }
 
 ::-webkit-scrollbar-thumb{
   max-height: 2px;
-  background-color: var(--blue-light);
+  background-color: var(--blue-principal);
   border-radius: 30px;
-  border: 1px solid var(--blue-dark);
+  border: 1px solid var(--blue-secondary);
 }
+
+
+#alert{
+    position: fixed;
+    height: 20%;
+    min-height: 140px;
+    width: 30%;
+    left: 50%;
+    top: 0;
+    padding: 0 2%;
+    transform: translate( -50% );
+    border-radius: 0px 0px 30px 30px;
+    z-index: 10;
+    box-shadow: 1px 7px 7px -6px var(--shadow);
+    transition: 0.5s;
+}
+
+
+.icons{
+    position: fixed;
+    left: 4%;
+    top: 50%;
+    transform: translate(0, -50%);
+    gap: 10px;
+}
+
+.icons svg{
+    height: 30px;
+    width: 30px;
+}
+#alert h1{
+    color: var(--blue-secondary);
+    margin-bottom:  10px;
+}
+
+
+#btAlert{
+    margin-top: 10px;
+    background-color:rgb(11, 64, 85) ;
+    color: #f8f8f8;
+    height: 30px;
+    width: 50px;
+    position: fixed;
+    right: calc(5% + 0px);
+
+    
+}
+
+
 
 /* hover */
 #optionsLang li:hover button, #optionsCalculator li:hover button{
-    background-color: var(--blue-dark);
+    background-color: var(--blue-secondary);
     color: #f8f8f8;
     border-radius: 30px;
     padding: 3px 5px;
@@ -274,12 +292,16 @@ main{
 }
 
 .ativado{
-    background-color: var(--blue-dark);
+    background-color: var(--blue-secondary);
 }
 
 .rotate{
     transform: rotate(-180deg);
     transition: 0.2s;
+}
+
+.invalid{
+    background-color: red;
 }
 
 

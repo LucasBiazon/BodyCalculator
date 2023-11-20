@@ -143,7 +143,10 @@ const btTheme = document.querySelector("#theme")
 const themeMoon = document.querySelector("#ThemeMoon")
 const themeSun = document.querySelector("#ThemeSun")
 
+// modal
 
+const modal = document.querySelector("#alert")
+const btModal = document.querySelector("#btAlert")
 // Types Calculator
 const btOptionsCalculator = document.querySelector("#btOptionsCalculator")
 const titleOptionsCalculator = document.querySelector("#titleOptionsCalculator")
@@ -390,6 +393,7 @@ calculatorImc.addEventListener("submit", (event) => {
    const height = parseFloat(document.querySelector(" #CalculatorIMC #height").value) 
    const weight = parseFloat(document.querySelector("#CalculatorIMC #weight").value)
    let result
+   let valid
    let stringimcThinness, stringimcNormal,  stringimcOverweight,  stringimcObesityS,  stringimcObesity, stringimcSlogan
     if(lang == 1){
         stringInvalid = pt_br.invalid
@@ -411,14 +415,16 @@ calculatorImc.addEventListener("submit", (event) => {
    if(isNaN(height))
     {
         result = stringInvalid
+        valid = false
     }else if(isNaN(weight))
     {
         result = stringInvalid
+        valid = false
     }else
 
      {  let resultImc = parseInt(weight / (height * height)) 
         let imcGrau 
-
+        valid = true
         if(resultImc < 18.5){
             imcGrau = stringimcThinness
         }else if( resultImc <= 24.9) {
@@ -434,7 +440,7 @@ calculatorImc.addEventListener("submit", (event) => {
         result = `${stringimcSlogan} ${resultImc} - ${imcGrau}`
     }
     
-    ResutsAplication(result)
+    ResutsAplication(result, valid)
 })
 
 
@@ -449,7 +455,7 @@ calculatorDensity.addEventListener("submit", (event) => {
     let valorGender
     let result, resultDensity, resultFat
     let stringSloganD, stringSloganF
-
+    let valid
     
     for(const op of optionGender){
         if(op.checked){
@@ -468,7 +474,7 @@ calculatorDensity.addEventListener("submit", (event) => {
     }
 
     if( !isNaN(weight) && !isNaN(age) && !isNaN(haunch) && !isNaN(triceps) & !isNaN(supraIliac) && typeof(valorGender) !== 'undefined') {
-
+        valid = true
         if(valorGender == 'masculine'){
             resultDensity = 1.10938 - 0.0008267 * (haunch + triceps + supraIliac) +  0.0000016* ((haunch + triceps + supraIliac) * (haunch + triceps + supraIliac))  - 0.0002574 * age
         }else{
@@ -479,10 +485,11 @@ calculatorDensity.addEventListener("submit", (event) => {
 
         result = `${stringSloganD} ${parseFloat(resultDensity)} </br> ${stringSloganF} ${parseInt(resultFat) + '%'}`
     }else{
+        valid = false
         result = stringInvalid
     }
 
-    ResutsAplication(result)
+    ResutsAplication(result, valid)
     
 })
 
@@ -497,6 +504,7 @@ calculatorEnergy.addEventListener("submit", (event) => {
     let valorGender, valorActvity
     let stringSlogan
     let result = 0
+    let valid
 
     for(const op of optionGender){
         if(op.checked){
@@ -520,7 +528,7 @@ calculatorEnergy.addEventListener("submit", (event) => {
 
     if( !isNaN(height) && !isNaN(weight) && !isNaN(age) && typeof(valorGender) !== 'undefined' && typeof(valorActvity) !== 'undefined') {
         
-
+        valid  = true
         if(valorGender == 'masculine'){
             result = 10 * weight + 6.25 * (height * 100) - 5 * age + 5
         }else{
@@ -547,9 +555,10 @@ calculatorEnergy.addEventListener("submit", (event) => {
         result = `${stringSlogan} ${result} kcal`
 
     }else{
+        valid = false
         result = stringInvalid
     }
-    ResutsAplication(result)
+    ResutsAplication(result, valid)
     
    
 })
@@ -563,7 +572,7 @@ calculatorMetabolic.addEventListener("submit", (event) => {
     let valorGender
     let result = 0
     let stringSlogan
-    
+    let valid
     for(const op of optionGender){
         if(op.checked){
             valorGender = op.value
@@ -579,7 +588,7 @@ calculatorMetabolic.addEventListener("submit", (event) => {
     }
     
     if( !isNaN(height) && !isNaN(weight) && !isNaN(age) && typeof(valorGender) !== 'undefined') {
-        
+        valid = true
         if(valorGender == 'masculine'){
             result = 66 + (13.7 * weight) + 5 * (height * 100) - ( age * 6.8)
         }else{
@@ -588,6 +597,7 @@ calculatorMetabolic.addEventListener("submit", (event) => {
         result = `${stringSlogan} ${result} kcal`
 
     }else{
+        valid = false
         result = stringInvalid
     }
 
@@ -602,7 +612,7 @@ calculatorNutritional.addEventListener("submit", (event) => {
     const fat = parseFloat(document.querySelector("#fat").value)
     let result
     let stringCarb, stringProtein, stringFat
-
+    let valid 
     if(lang == 1){
         stringInvalid = pt_br.invalid
         stringCarb = pt_br.nutritionalNeeds.sloganCarb
@@ -616,22 +626,27 @@ calculatorNutritional.addEventListener("submit", (event) => {
     }
 
     if(!isNaN(calories) && !isNaN(carbohydrates) && !isNaN(protein) && !isNaN(fat)){
+        valid = true
         let tCarb = parseInt((calories  /  (carbohydrates * 100)) / 4 * 1000)
         let tProtein = parseInt((calories  / (protein * 100)) / 4 * 1000)
         let tFat = parseInt((calories / (fat * 100)) / 9  * 1000)
 
         result = `${stringCarb} ${tCarb}g </br> ${stringProtein} ${tProtein}g </br> ${stringFat} ${tFat}g`
     }else{
+        valid = false
         result = stringInvalid
     }
-    ResutsAplication(result)
+    ResutsAplication(result, valid)
 })
 
 
-function ResutsAplication(result){
+function ResutsAplication(result, valid){
+    let text = ""
     pResult.innerHTML = " " 
-    loadingResults.classList.add("disabled")
-    pResult. innerHTML = result
+    loadingResults.classList.add("disabled") 
+    pResult.innerHTML = result
+    console.log(result)
+   
     results.appendChild(pResult)
 }
 
@@ -641,4 +656,14 @@ btTheme.addEventListener('click', () => {
     body.classList.toggle('dark-mode');
     themeMoon.classList.toggle('disabled')
     themeSun.classList.toggle("disabled")
-  })
+})
+
+document.addEventListener("DOMContentLoaded", () => {
+    setTimeout( () => modal.classList.remove("disabled"), 1000)
+    const savedMode = localStorage.getItem('dark');
+    if (savedMode) {
+        document.body.classList.add('dark-mode');
+    }
+})
+
+btModal.addEventListener("click", () =>  modal.classList.add('disabled'))
