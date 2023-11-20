@@ -353,6 +353,7 @@ opIMC.addEventListener("click", () => {
     calculatorImc.classList.remove("disabled")
     calculatorAtual = calculatorImc    
     titleOptionsCalculator.innerHTML = opIMC.innerHTML
+    optionsCalculator.classList.add("disabled")
 }) 
 
 opDensity.addEventListener("click", () => {
@@ -360,6 +361,7 @@ opDensity.addEventListener("click", () => {
     calculatorDensity.classList.remove("disabled")
     calculatorAtual = calculatorDensity
     titleOptionsCalculator.innerHTML =  opDensity.innerHTML
+    optionsCalculator.classList.add("disabled")
 })
 
 opEnergy.addEventListener("click", () => {
@@ -367,6 +369,7 @@ opEnergy.addEventListener("click", () => {
     calculatorEnergy.classList.remove("disabled")
     calculatorAtual = calculatorEnergy
     titleOptionsCalculator.innerHTML = opEnergy.innerHTML
+    optionsCalculator.classList.toggle("disabled")
 })
 
 opMetabolic.addEventListener("click", () => {
@@ -374,6 +377,7 @@ opMetabolic.addEventListener("click", () => {
     calculatorMetabolic.classList.remove("disabled")
     calculatorAtual = calculatorMetabolic
     titleOptionsCalculator.innerHTML = opMetabolic.innerHTML
+    optionsCalculator.classList.add("disabled")
 })
 
 opNutritional.addEventListener("click", () => {
@@ -381,6 +385,7 @@ opNutritional.addEventListener("click", () => {
     calculatorNutritional.classList.remove("disabled")
     calculatorAtual = calculatorNutritional
     titleOptionsCalculator.innerHTML = opNutritional.innerHTML
+    optionsCalculator.classList.add("disabled")
 })
 
 // Calculator operation
